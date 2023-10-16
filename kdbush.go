@@ -1,6 +1,7 @@
 package kdbush
 
 import (
+	"fmt"
 	"math"
 )
 
@@ -52,7 +53,11 @@ func (bush *KDBush) Range(minX, minY, maxX, maxY float64) []int {
 	result := []int{}
 	var x, y float64
 
-	for len(stack) > 0 {
+	ln := len(stack)
+
+	fmt.Println(ln)
+
+	for ln > 0 {
 		axis := stack[len(stack)-1]
 		stack = stack[:len(stack)-1]
 		right := stack[len(stack)-1]
